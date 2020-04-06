@@ -1,229 +1,229 @@
-body {
-    font-family: Arial;
-    margin: 0;
-  }
-  
-  h1 {
-    color: blueviolet;
-    font-size: 90px; 
-    text-transform: uppercase;
-    margin-top: -30px;
-    font-weight: bold;
-  }
-  
-  h2 {
-    font-size: 42px;
-    font-weight: bold;
-  }
-  
-  #grid-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 50px 500px 150px 150px auto 100px;
-    grid-template-areas: 
-      "menu"
-      "header"
-      "highlights"
-      "text"
-      "testimonials"
-      "footer"
-    ;
-  }
-  
-  #testimonials{
-    display: flex;
-  }
-
-  @keyframes testmonial{
-    from{
-      box-shadow: inset 0 0 20px #333;
-
-    }to{
-      box-shadow: none;
-    }
-  }
-  @keyframes testimonial-hover{
-    to{
-      box-shadow: inset 0 0 20px #333;
-    }
-  }
-  .testimonial:hover{
-    animation-name: testimonial-hover;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-  }
-
-  .testimonial {
-    background-color: #fff;
-    border-radius: 25px;
-    padding: 50px;
-    margin: 50px;
-    width: auto;
-    line-height: 1.7;
-    animation-name: testimonial;
-    animation-duration: 0.5s;
-  }
-  
-  #main-testimonials{
-    grid-area: testimonials;
-    background-color: blueviolet;
-  }
-  
-  #main-text {
-    grid-area: text;
-    text-align: center;
-    padding-top: 50px;
-  }
-  
-  #main-text span{
-    font-size: 30px;
-    font-style: italic;
-  }
-  
-  #main-highlights{
-    grid-area: highlights;
-  }
-  
-  #main-menu{
-    grid-area: menu;
-    box-shadow: 0px 10px 20px -12px #666; /*SOMBRA cima, esquerda, esfumaçada, distancia do esfumaçado,  cor da sombra*/
-    position: relative;
-    padding: 13px 5px 10px 5px;
- 
-  }
-  #nav-menu a:hover{
-    color: blueviolet;
-    border-bottom: 3px solid blueviolet;
-    padding-bottom: 15px;
-  }
-
-  #nav-menu {
-    width: 800px;
-    float: right;
-  }
-  
-  #nav-menu a {
-    margin-right: 35px;
-    font-weight: bold;
-    color: #666;
-    text-decoration: none;
-  }
-  
-  #main-header{
-    grid-area: header;
-    background-image: url(../Projeto-1/Imagem_header.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 500px;
-  }
-  
-  #header-text{
-    position: absolute;
-    top: 100px;
-    left: 100px;
-  }
-  
-  #highlights-container {
-    display: flex; /*Declara que é um flexbox*/
-    justify-content: center; /*Alinha conteúdo no centro*/
-  }
-  @keyframes highlight-hover{
-    to{
-      background-color: #666;
-    }
-  }
-  
-  #highlights-container div:hover{
-    animation-name: highlight-hover;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-  }
-  #highlights-container div {
-    padding: 50px;
-    flex-grow: 1; /*Define o quanto o conteúdo deve crescer*/
-    color: #fff;
-    font-weight: bold;
-    height: 50px;
-  }
-  
-  #color-blue {
-    background-color: #52779c;  
-  }
-  
-  #color-violet {
-    background-color: rgb(109, 35, 179);  
-  }
-  
-  #color-gray {
-    background-color: #8f8c8c;  
-  }
-  #main-footer{
-    grid-area: footer;
-    text-align: center;
-    padding-top: 40px;
-    background-color: #8f8c8c;
-    
+body{
+  font-family: Arial;
+  margin: 0;
   
 }
+h1{
+  color:blueviolet;
+  font-size: 90px;
+  text-transform: uppercase;
+  margin-top: -30px;
+  font-weight: bold;
+}
+h2{
+  font-size: 42px;
+  font-weight: bold;
+}
+/* =========== GRID ===========*/
+#grid-container{
+ display: grid; /*Definindo que a GRID vai ser utilizada*/
+ grid-template-columns: auto; /*Colunas da GRID*/
+ grid-template-rows: 50px 500px 150px 150px auto 100px; /*Linhas da grid e seus tamanhos*/
+ grid-template-areas: /*Definir quais vão ser as áreas da grid*/
+    "menu"
+    "header"
+    "destaques"
+    "main-text"
+    "testemunhas"
+    "footer"
+ ;
+}
 
-@media (max-width: 1000px){ /*Todo dispositivo que a tela for menor que 1000px*/
-  #main-header{
+#main-footer{
+ grid-area: footer;
+ text-align: center;
+ padding-top: 40px;
+ background-color: #8f8c8c;
+
+}
+
+#testemunhas{
+ display: flex;
+}
+
+#main-testemunhas{
+ grid-area: testemunhas;
+ background-color: blueviolet;
+ 
+}
+
+@keyframes testemunha{/*Animação final*/
+ from{/*Sair desse estado*/
+    box-shadow: inset 0 0 20px #333;
+ }
+ to{/*Para esse estado*/
+    box-shadow: none;
+ }
+}
+
+@keyframes testemunha-hover{/*Sombra interior*/
+ to{
+    box-shadow: inset 0 0 20px #333;
+ }
+}
+
+.testemunha:hover{
+ animation-name: testemunha-hover;
+ animation-duration: 0.5s;
+ animation-fill-mode: forwards;
+}
+.testemunha{
+ background-color: #fff;
+ border-radius: 25px;
+ padding: 50px;
+ margin: 50px;
+ line-height: 1.7;
+ animation-name: testemunha;
+ animation-duration: 1s;
+}
+
+#main-text{/*Seção do texto de destaque*/
+ grid-area: main-text;
+ text-align: center;
+ padding: 50px;
+}
+#texto-destaque span{/*Texto de destaque */
+ font-size: 30px;
+ font-style: italic;
+}
+
+
+#main-menu{
+ grid-area: menu;
+ padding: 13px 5px 10px 5px;
+ box-shadow: 0px 10px 20px -12px #666; /* SOMBRA === TAMANHO(esquerda, topo, intensidade do esfumaçado, distancia do esfumaçado, cor)*/
+ position: relative; /*Para sombra ser exibida*/
+}
+#nav-menu{
+ width: 800px;
+ float: right;
+}
+
+#nav-menu a{/*Selecionaou os links do menu*/
+ margin-right: 35px;
+ font-weight: bold; /*Peso da fonte*/
+ color: #666;
+ text-decoration: none; /*Sem decoração: Tirando o sublinhado do link*/
+}
+
+#nav-menu a:hover{
+ color: blueviolet;
+ border-bottom: 3px solid blueviolet;
+ padding-bottom: 17px;
+}
+
+#main-header{
+ grid-area: header; /*Dando nome p/ ser referenciado na grid*/
+ background-image: url(Imagem_header.jpeg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
+ height: 500px;
+}
+
+#header-text{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+#main-destaques{
+ grid-area: destaques;
+}
+
+#destaques-container{
+  display: flex; /*Definindo o container como flex box*/
+  justify-content: center;
+  
+}
+#destaques-container div{
+ padding: 50px;
+ flex-grow: 1; /*Define o quanto o conteúdo deve crescer*/
+ color: #fff;
+ font-weight: bold;
+ height: 50px;
+}
+
+/*Animações CSS*/
+@keyframes destaques-hover{
+ to{/*Pra onde a animação vai*/
+    background-color: #666;
+ }
+ /*from{} seria De onde ela está vindo*/
+}
+#destaques-container div:hover{
+ animation-name: destaques-hover; /*Declarar qual animação executar*/
+ animation-duration: 0.5s; /*Duração da animação*/
+ animation-fill-mode: forwards; /*Declara oque acontece com a animação em determinado momento*/
+}
+#color-blue{
+  background-color: #52779c;
+}
+#color-violet{
+  background-color: #6d23b3;
+}
+#color-gray{
+  background-color: #8f8c8c;
+}
+
+@media (max-width: 1000px){ /*COMO A PAGINA VAI SER EXIBIDA SE A TELA FOR MENOR QUE 100PX*/
+ #main-header{
     height: 200px;
-  }
-  #main-text {
+ }
+
+ #main-text{/*Seção do texto de destaque*/
     text-align: center;
     padding: 50px 10px 50px 10px;
-}
+ }
 
-  h1{
-    font-size: 55px;
-  }
+ h1{
+    font-size: 55px;  
+ }
 
-  h2{
-    font-size: 25px;
-  }
-  #testimonials{
-    flex-direction: column;
-  }
-  .testimonial{
-    padding: 30px;
-    margin: 25px;
-  }
-
-  #header-text{
+ h2{
+   font-size:  25px;
+ }
+ #header-text{
     top: 0;
     left: 0;
     text-align: center;
     width: 100%;
-  }
-
-  #highlights-container{
+ }
+ #destaques-container{
     flex-direction: column;
-  }
-  #highlights-container div {
-    padding:1px 10px 1px 10px;
-    height: auto;
-}
+ }
 
-  #grid-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 0px 200px auto auto auto 100px;
-    grid-template-areas: 
-      "menu"
-      "header"
-      "highlights"
-      "text"
-      "testimonials"
-      "footer"
+ #destaques-container div{
+    padding: 1px 10px 1px 10px;
+    height: auto;
+ }
+
+ #grid-container{
+    display: grid; /*Definindo que a GRID vai ser utilizada*/
+    grid-template-rows: 0px 200px auto auto auto 100px; /*Linhas da grid e seus tamanhos*/
+    grid-template-areas: /*Definir quais vão ser as áreas da grid*/
+       "."
+       "header"
+       "destaques"
+       "main-text"
+       "testemunhas"
+       "footer"
     ;
-  }
-  
-  #nav-menu{
+ }
+
+ #nav-menu{
     display: none;
-  }
-  #main-text span{
+ }
+ 
+ #testemunhas{
+    flex-direction: column;
+ }
+
+ .testemunha{
+    padding: 30px;
+    margin: 25px;
+ }
+ #main-text span{
     font-size: 22px;
-  }
+ }
 }
